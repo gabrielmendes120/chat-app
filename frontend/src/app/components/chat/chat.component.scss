@@ -1,0 +1,60 @@
+.message {
+    background-color: white;
+    padding: 0 5px 0 5px;
+}
+
+.message-username {
+    display: block;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: 'users chat chat chat' 'users message message message';
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-container>div {
+    font-size: 12px;
+}
+
+.users {
+    box-sizing: border-box;
+    overflow: auto;
+    overflow-y: auto;
+    grid-area: users;
+    height: 600px;
+    background-image: linear-gradient(0deg, white 30%, #4682b4);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.chat {
+    box-sizing: border-box;
+    background-color: #C1CDCD;
+    grid-area: chat;
+    height: 500px;
+    padding: 10px 10px 10px 10px;
+    overflow-y: auto;
+}
+
+.type-message {
+    grid-area: message;
+}
+
+@media only screen and (max-width: 600px) {
+    .users {
+        display: none;
+    }
+    .grid-container {
+        display: grid;
+        grid-template-areas: 'chat' 'message';
+        gap: 10px;
+        padding: 10px;
+    }
+    .chat {
+        height: 400px;
+    }
+}

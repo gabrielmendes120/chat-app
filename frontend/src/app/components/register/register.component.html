@@ -1,0 +1,83 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" name="registerForm">
+  <app-file-upload
+    formControlName="avatar"
+    [avatarError]="form.controls['avatar']"
+  ></app-file-upload>
+
+  <div *ngIf="msgError" class="alert alert-danger mb-3">
+    {{ msgError }}
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="username">Username</label>
+      <div>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Your Username"
+          formControlName="username"
+          [ngClass]="{
+            'is-invalid':
+              form.controls['username'].invalid &&
+              form.controls['username'].touched
+          }"
+        />
+      </div>
+      <app-field-error-display
+        nameField="Username"
+        [formError]="form.controls['username']"
+      >
+      </app-field-error-display>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="email">Email</label>
+      <div>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Your Email"
+          formControlName="email"
+          [ngClass]="{
+            'is-invalid':
+              form.controls['email'].invalid && form.controls['email'].touched
+          }"
+        />
+      </div>
+      <app-field-error-display
+        nameField="Email"
+        [formError]="form.controls['email']"
+      ></app-field-error-display>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="password">Password</label>
+      <div>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Your password"
+          formControlName="password"
+          [ngClass]="{
+            'is-invalid':
+              form.controls['password'].invalid &&
+              form.controls['password'].touched
+          }"
+        />
+      </div>
+      <app-field-error-display
+        nameField="Password"
+        [formError]="form.controls['password']"
+      >
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    Register
+  </button>
+</form>

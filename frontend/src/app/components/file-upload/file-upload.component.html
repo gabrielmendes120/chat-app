@@ -1,0 +1,13 @@
+<div class="input-group-custom mb-3" *ngIf="previewUrl">
+  <img [src]="previewUrl" class="image-avatar" />
+</div>
+
+<div class="input-group-custom mb-3">
+  <input type="file" accept="image/png" class="custom-file-input" id="avatar" />
+  <label class="custom-file-label" for="avatar">Choose your avatar</label>
+  <app-field-error-display
+    class="mx-auto"
+    nameField="Avatar"
+    [formError]="avatarError"
+  ></app-field-error-display>
+</div>

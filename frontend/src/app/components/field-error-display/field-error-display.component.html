@@ -1,0 +1,24 @@
+<div *ngIf="formError.invalid" class="text-error mt-0">
+
+    <div *ngIf="formError.errors.requiredFileType">
+        * {{nameField}} file format should be PNG
+    </div>
+
+    <div *ngIf="formError.errors.strengthPasswordInvalid">
+        * {{nameField}} must be at least 8 characters with uppercase letters and numbers
+    </div>
+
+    <div *ngIf="(formError.touched || formError.dirty ) && (customErrorMsg && !formError.errors.requiredFileType)">
+        * {{nameField}} {{customErrorMsg}}
+    </div>
+
+    <div *ngIf="(formError.touched || formError.dirty) && (!formError.errors.requiredFileType && !formError.errors.strengthPasswordInvalid)">
+        <div *ngIf="formError.errors.required">
+            * {{nameField}} is required
+        </div>
+        <div *ngIf="!formError.errors.required">
+            * {{nameField}} is invalid
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+html,
+body {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    display: flex;
+    align-items: center;
+    background-color: #FFFFF0;
+}
+
+.text-error {
+    font-size: 12px;
+    margin: 0 10px 10px;
+}
