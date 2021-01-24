@@ -7,7 +7,7 @@
         <div class="mb-2" *ngFor="let user of infoUsersOnline">
           <label class="rounded-circle">
             <img
-              class="mr-2"
+              class="ml-2 mr-2"
               [src]="user.imageBase64 | safeHtml"
               height="30px"
               width="30px"
@@ -33,7 +33,7 @@
           *ngFor="let message of messages"
         >
           <span class="message-username">
-            {{ message.username }} {{ message.today | date: "hh:mm" }}
+            {{ message.username }} {{ message.today | date: "hh:mm a" }}
           </span>
           <label class="rounded-circle">
             <img
